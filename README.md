@@ -27,10 +27,10 @@ Enjoy the game!
 
 📖 *Project Structure*
 
-FunnyButton/
-├── index.html       # Main HTML file
-├── script.js        # Game logic written in TypeScript (compiled to JavaScript)
-└── README.md        # Project documentation
+FunnyButton/ </br>
+├── index.html       # Main HTML file<br>
+├── script.js        # Game logic written in TypeScript (compiled to JavaScript)<br>
+└── README.md        # Project documentation<br>
 
 
 📚 *How to Play*
