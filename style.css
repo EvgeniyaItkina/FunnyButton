@@ -2,14 +2,11 @@ body {
   margin: 0;
   height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   background-color: #1b1b2f;
 }
 
-.button-container {
-  position: relative;
-}
 
 #magicButton {
   padding: 20px 40px;
@@ -20,9 +17,5 @@ body {
   border-radius: 50px;
   cursor: pointer;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
-
-#magicButton:hover {
-  transform: scale(1.1);
+  transition: all 0.3s ease;
 }
