@@ -34,6 +34,7 @@ FunnyButton/ </br>
 
 
 📚 *How to Play*
+
 Hover over the "Catch me!" button.
 The button will move, changing its shape and color.
 Try to click the button.
