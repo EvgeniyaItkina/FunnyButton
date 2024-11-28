@@ -8,7 +8,7 @@ body {
 }
 
 
-#magicButton {
+.magicButton {
   padding: 20px 40px;
   font-size: 20px;
   border: none;
@@ -18,4 +18,55 @@ body {
   cursor: pointer;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
+/*   color: rgb(67, 64, 64);
+ */}
+
+
+.shape-circle {
+  padding: 0px;
+  border-radius: 50%;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  font-size: 10px;
+}
+
+.shape-oval {
+  padding: 0px;
+  border-radius: 50%;
+  width: 150px;
+  height: 100px;
+}
+
+.shape-square {
+padding: 0px;
+  border-radius: 0;
+  padding: 20px;
+  width: 100px;
+  height: 100px;
+}
+
+.shape-rectangle {
+  border-radius: 0;
+  width: 150px;
+  height: 100px;
+}
+
+.shape-star {
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  width: 170px;
+  height: 150px;
+  font-size: 10px;
 }

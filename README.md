@@ -4,26 +4,28 @@ FunnyButton is a small interactive game where the button "runs away" from the us
 
 📋 *Features*
 
-- **Dynamic movement:** The button changes its location.
-- **Custom styles:** The button dynamically changes shape and color.
-- **Winning screen:** Displays a congratulatory popup on success.
+- **Dynamic movement:**  The button moves randomly when the cursor hovers over it.
+- **Custom styles:** The button changes shape, color, and text dynamically.
+- **Traces**: A temporary trace appears where the button was previously located.
+- **Winning screen**: Displays a congratulatory popup with a "Start New Game" button when the user clicks the button.
 
 🛠️ *Technologies Used*
+
 <u>HTML</u>: Game structure.
 <u>CSS</u> (generated dynamically in TypeScript): Styles for the button, popup, and controls.
-<u>TypeScript</u>: Game logic and dynamic style updates.
+<u>TypeScript</u>: Handles game logic, including movement, shape, and color changes.
 
 🚀 *Installation and Launch*
-Clone the repository:
+
+<u>Clone the repository</u>:
 
 git clone https://github.com/your-username/FunnyButton.git
 cd FunnyButton
-Make sure you have a local server (e.g., Live Server for VS Code).
+<u>Run the project</u>:
 
-Run the project:
-
-If using Live Server, simply open index.html in your browser.
-Enjoy the game!
+Ensure you have a local server (e.g., Live Server for VS Code).
+Open index.html in your browser using Live Server.
+<u>Enjoy the game!</u>
 
 📖 *Project Structure*
 
@@ -42,4 +44,5 @@ If you succeed, a "You win!" message will appear, along with a button to restart
 
 🖌️ *Styles*
 
-All styles are dynamically generated in TypeScript. The button and popup have a modern design with smooth transitions and shadows.
+All styles are dynamically generated in TypeScript. 
+The button and popup have a modern design with smooth transitions and shadows.
