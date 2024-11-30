@@ -30,7 +30,9 @@ const colors = [
     "#F1C40F" // Golden yellow
 ];
 const buttonTexts = ["Catch me!", "Almost!", "Try again!", "Too slow!", "Nice try!"];
+document.body.addEventListener("touchmove", (e) => e.preventDefault(), { passive: false });
 function moveButton(e) {
+    e.preventDefault();
     // generate random coordinates
     const offsetX = Math.random() * (Math.random() < 0.5 ? -1 : 1) * 150;
     const offsetY = Math.random() * (Math.random() < 0.5 ? -1 : 1) * 150;
@@ -123,7 +125,7 @@ function winGame(e) {
     restartButton.style.transition = "all 0.3s ease";
 }
 button.addEventListener("mouseover", moveButton);
-button.addEventListener("touchstart", moveButton);
+button.addEventListener("touchmove", moveButton);
 button.addEventListener("click", winGame);
 button.addEventListener("touchend", winGame);
 function createStars(count) {

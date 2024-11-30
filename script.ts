@@ -37,8 +37,10 @@ const colors = [
 
 const buttonTexts = ["Catch me!", "Almost!", "Try again!", "Too slow!", "Nice try!"];
 
-function moveButton(e: Event) {
+document.body.addEventListener("touchmove", (e) => e.preventDefault(), { passive: false });
 
+function moveButton(e: Event) {
+    e.preventDefault()
     // generate random coordinates
     const offsetX = Math.random() * (Math.random() < 0.5 ? -1 : 1) * 150;
     const offsetY = Math.random() * (Math.random() < 0.5 ? -1 : 1) * 150;
@@ -143,7 +145,7 @@ function winGame(e: Event) {
 }
 
 button.addEventListener("mouseover", moveButton);
-button.addEventListener("touchstart", moveButton);
+button.addEventListener("touchmove", moveButton);
 
 button.addEventListener("click", winGame);
 button.addEventListener("touchend", winGame);
