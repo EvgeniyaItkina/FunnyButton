@@ -37,7 +37,7 @@ const colors = [
 
 const buttonTexts = ["Catch me!", "Almost!", "Try again!", "Too slow!", "Nice try!"];
 
-button.addEventListener("mouseover", () => {
+function moveButton(e: Event) {
 
     // generate random coordinates
     const offsetX = Math.random() * (Math.random() < 0.5 ? -1 : 1) * 150;
@@ -85,13 +85,13 @@ button.addEventListener("mouseover", () => {
     document.body.appendChild(trace);
 
     setTimeout(() => {
-        trace.remove(); 
+        trace.remove();
     }, 200);
 
     console.log(`Moved to: ${newX}px, ${newY}px`);
-});
+}
 
-button.addEventListener("click", () => {
+function winGame(e: Event) {
     //create a popup win
     const winPopup = document.createElement("div");
     winPopup.innerText = "You win!";
@@ -140,4 +140,23 @@ button.addEventListener("click", () => {
     restartButton.style.boxShadow = "0 5px 10px rgba(0, 0, 0, 0.2)";
     restartButton.style.transition = "all 0.3s ease";
 
-});
+}
+
+button.addEventListener("mouseover", moveButton);
+button.addEventListener("touchmove", moveButton);
+
+button.addEventListener("click", winGame);
+button.addEventListener("touchend", winGame);
+
+function createStars(count: number) {
+    for (let i = 0; i < count; i++) {
+        const star = document.createElement("div");
+        star.classList.add("star");
+        star.style.left = `${Math.random() * window.innerWidth}px`;
+        star.style.top = `${Math.random() * window.innerHeight}px`;
+        star.style.animationDuration = `${Math.random() + 2}s`;
+        document.body.appendChild(star);
+    }
+}
+
+createStars(1000); 
