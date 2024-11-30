@@ -143,7 +143,7 @@ function winGame(e: Event) {
 }
 
 button.addEventListener("mouseover", moveButton);
-button.addEventListener("touchmove", moveButton);
+button.addEventListener("touchstart", moveButton);
 
 button.addEventListener("click", winGame);
 button.addEventListener("touchend", winGame);

@@ -123,7 +123,7 @@ function winGame(e) {
     restartButton.style.transition = "all 0.3s ease";
 }
 button.addEventListener("mouseover", moveButton);
-button.addEventListener("touchmove", moveButton);
+button.addEventListener("touchstart", moveButton);
 button.addEventListener("click", winGame);
 button.addEventListener("touchend", winGame);
 function createStars(count) {
