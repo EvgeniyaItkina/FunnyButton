@@ -37,6 +37,10 @@ const colors = [
 
 const buttonTexts = ["Catch me!", "Almost!", "Try again!", "Too slow!", "Nice try!"];
 
+document.addEventListener("touchmove", () => {
+    console.log("Global touchstart triggered");
+});
+
 document.body.addEventListener("touchmove", (e) => e.preventDefault(), { passive: false });
 
 function moveButton(e: Event) {
@@ -93,7 +97,7 @@ function moveButton(e: Event) {
     console.log(`Moved to: ${newX}px, ${newY}px`);
 }
 
-function winGame(e: Event) {
+function winGame() {
     //create a popup win
     const winPopup = document.createElement("div");
     winPopup.innerText = "You win!";
@@ -144,8 +148,33 @@ function winGame(e: Event) {
 
 }
 
+//create fuction to check if the button is near the touch
+function isNearButton(touchX: number, touchY: number): boolean {
+    const buttonRect = button.getBoundingClientRect(); // coordinates of the button
+    const buttonCenterX = buttonRect.left + buttonRect.width / 2; // center of the button
+    const buttonCenterY = buttonRect.top + buttonRect.height / 2;
+
+    // calculate the distance between the button and the touch
+    const distance = Math.sqrt(
+        Math.pow(buttonCenterX - touchX, 2) + Math.pow(buttonCenterY - touchY, 2)
+    );
+
+    console.log(`Distance to button: ${distance}px`);
+
+    return distance < 80; // if the distance is less than 80px, return true
+}
+
 button.addEventListener("mouseover", moveButton);
-button.addEventListener("touchmove", moveButton);
+document.body.addEventListener("touchmove", (e) => {
+    e.preventDefault();
+    const touch = e.touches[0];
+    const touchX = touch.clientX;
+    const touchY = touch.clientY;
+
+    if (isNearButton(touchX, touchY)) {
+        moveButton(e);
+    }
+}, { passive: false });
 
 button.addEventListener("click", winGame);
 button.addEventListener("touchend", winGame);
